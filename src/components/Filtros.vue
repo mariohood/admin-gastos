@@ -1,5 +1,6 @@
 <script setup>
-
+  defineProps(['filtro'])
+  defineEmits(['update:filtro'])
 </script>
 
 <template>
@@ -9,8 +10,8 @@
         <label for="filtro">Filtrar Gastos</label>
         <select
             id="filtro"
-            :value="categoria"
-            @input="$emit('update:categoria', $event.target.value)"
+            :value="filtro"
+            @input="$emit('update:filtro', $event.target.value)"
           >
             <option value="">--Gastos
               Seleccione --</option>
